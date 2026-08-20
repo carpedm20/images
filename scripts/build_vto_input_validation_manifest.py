@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import io
 import json
 from pathlib import Path
 from typing import Any
@@ -16,6 +17,44 @@ SUITE_ROOT = REPO_ROOT / "vto" / "input-validation" / "v1"
 SCENARIOS_PATH = SUITE_ROOT / "scenarios.json"
 MANIFEST_PATH = SUITE_ROOT / "manifest.json"
 IMAGE_SUFFIXES = {".jpeg", ".jpg", ".png", ".webp"}
+
+
+def _render_media_variant(spec: dict[str, Any]) -> bytes:
+    source = SUITE_ROOT / spec["source"]
+    with Image.open(source) as image:
+        if spec["format"] == "JPEG":
+            rendered = image.convert("RGB")
+            options = {
+                "quality": spec["quality"],
+                "subsampling": 0,
+                "progressive": True,
+                "optimize": False,
+            }
+        elif spec["format"] == "WEBP":
+            rendered = image.convert("RGBA")
+            options = {
+                "lossless": True,
+                "quality": 100,
+                "method": 6,
+                "exact": True,
+            }
+        else:  # pragma: no cover - source schema owns the closed set
+            raise ValueError(f"unsupported generated media format: {spec['format']}")
+        buffer = io.BytesIO()
+        rendered.save(buffer, format=spec["format"], **options)
+    return buffer.getvalue()
+
+
+def _sync_media_variants(source: dict[str, Any], *, check: bool) -> None:
+    for spec in source.get("generated_media_variants", []):
+        destination = SUITE_ROOT / spec["path"]
+        expected = _render_media_variant(spec)
+        if check:
+            if not destination.exists() or destination.read_bytes() != expected:
+                raise SystemExit(f"stale generated media variant: {destination}")
+            continue
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        destination.write_bytes(expected)
 
 
 def _image_contract(path: Path) -> dict[str, Any]:
@@ -70,15 +109,15 @@ def build_manifest() -> dict[str, Any]:
         for path in SUITE_ROOT.rglob("*")
         if path.is_file() and path.suffix.lower() in IMAGE_SUFFIXES
     }
-    unowned = sorted(path.relative_to(SUITE_ROOT).as_posix() for path in discovered - owned_paths)
+    unowned = sorted(
+        path.relative_to(SUITE_ROOT).as_posix() for path in discovered - owned_paths
+    )
     if unowned:
         raise ValueError(f"images are not owned by a scenario: {unowned}")
 
-    return {
-        key: value
-        for key, value in source.items()
-        if key != "cases"
-    } | {"cases": built_cases}
+    return {key: value for key, value in source.items() if key != "cases"} | {
+        "cases": built_cases
+    }
 
 
 def _serialized_case(case: dict[str, Any]) -> str:
@@ -89,6 +128,8 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
+    source = json.loads(SCENARIOS_PATH.read_text(encoding="utf-8"))
+    _sync_media_variants(source, check=args.check)
     manifest = build_manifest()
     expected = json.dumps(manifest, indent=2, sort_keys=False) + "\n"
     if args.check:

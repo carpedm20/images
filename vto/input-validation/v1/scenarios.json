@@ -8,6 +8,19 @@
     "medium": "Two interacting signals or a common ecommerce presentation trap.",
     "hard": "A threshold boundary, state transition, ambiguity, or high-cardinality composition."
   },
+  "generated_media_variants": [
+    {
+      "source": "admission/medium-modeled-and-cropped-top/current-top-cropped.png",
+      "path": "admission/medium-modeled-and-cropped-top/current-top-cropped-progressive.jpg",
+      "format": "JPEG",
+      "quality": 94
+    },
+    {
+      "source": "preparation/hard-reuse-unknown-fallback/current-shoes.png",
+      "path": "preparation/hard-reuse-unknown-fallback/current-shoes-lossless.webp",
+      "format": "WEBP"
+    }
+  ],
   "required_coverage": [
     "category:accessory",
     "category:bag",
@@ -34,10 +47,12 @@
     "human:zero",
     "input:outfit_image",
     "input:product",
+    "media:jpeg",
     "media:portrait",
     "media:rgb",
     "media:rgba",
     "media:square",
+    "media:webp",
     "preparation:birefnet",
     "preparation:prepared_fetch_fallback",
     "preparation:reuse",
@@ -107,6 +122,7 @@
         "category:top",
         "human:one",
         "input:product",
+        "media:jpeg",
         "presentation:close_crop",
         "presentation:dense_pseudo_text",
         "presentation:modeled"
@@ -121,6 +137,13 @@
         },
         {
           "file": "current-top-cropped.png",
+          "kind": "product_category",
+          "tier": "gating",
+          "expected_category": "top",
+          "expected_human_bucket": "zero"
+        },
+        {
+          "file": "current-top-cropped-progressive.jpg",
           "kind": "product_category",
           "tier": "gating",
           "expected_category": "top",
@@ -360,6 +383,7 @@
         "category:shoes",
         "human:unknown",
         "media:rgba",
+        "media:webp",
         "preparation:prepared_fetch_fallback",
         "preparation:reuse",
         "preparation:sam3_route",
@@ -390,6 +414,13 @@
       "live_checks": [
         {
           "file": "current-shoes.png",
+          "kind": "product_category",
+          "tier": "gating",
+          "expected_category": "shoes",
+          "expected_human_bucket": "zero"
+        },
+        {
+          "file": "current-shoes-lossless.webp",
           "kind": "product_category",
           "tier": "gating",
           "expected_category": "shoes",

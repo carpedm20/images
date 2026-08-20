@@ -11,6 +11,11 @@ easy, medium, and hard difficulty. Each folder has its own generated
 `case.json` and all images needed by that scenario, including multi-garment
 flows.
 
+The 24 folders currently contain 81 scenario-local image paths backed by 24
+unique SHA-256 blobs. PNG originals are supplemented by one progressive JPEG
+and one lossless-alpha WebP derived deterministically by the manifest generator,
+so consumers exercise all three supported fixture decoders.
+
 The families cover:
 
 - category admission and non-target scope boundaries;
@@ -32,9 +37,9 @@ uv run --with pillow python scripts/build_vto_input_validation_manifest.py
 uv run --with pillow python scripts/build_vto_input_validation_manifest.py --check
 ```
 
-The fixtures were created with OpenAI's built-in image generation tool on
-2026-08-20. No third-party source image was supplied. See [PROMPTS.md](PROMPTS.md)
-for the generation prompt set.
+The original visual fixtures were created with OpenAI's built-in image
+generation tool on 2026-08-20. No third-party source image was supplied. See
+[PROMPTS.md](PROMPTS.md) for the generation prompt set and derived-media note.
 
 Consumers must pin raw URLs to an immutable Git commit, for example:
 

@@ -174,3 +174,14 @@ reference.
 > No enlarged product inset, collage border, second person, mannequin, mirrors,
 > props, logos, readable text, watermark, or brand marks. The intentionally tiny
 > single person is the only subject.
+
+## Deterministic media variants
+
+Two byte-level decoder fixtures are derived from the generated originals by
+`scripts/build_vto_input_validation_manifest.py`; they do not use another image
+generation prompt:
+
+- `current-top-cropped-progressive.jpg`: RGB progressive JPEG, quality 94,
+  4:4:4 subsampling;
+- `current-shoes-lossless.webp`: lossless RGBA WebP with transparent pixels
+  preserved.

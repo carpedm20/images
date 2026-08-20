@@ -9,6 +9,7 @@
     "category:shoes",
     "human:unknown",
     "media:rgba",
+    "media:webp",
     "preparation:prepared_fetch_fallback",
     "preparation:reuse",
     "preparation:sam3_route",
@@ -43,9 +44,28 @@
       "tier": "gating",
       "expected_category": "shoes",
       "expected_human_bucket": "zero"
+    },
+    {
+      "file": "current-shoes-lossless.webp",
+      "kind": "product_category",
+      "tier": "gating",
+      "expected_category": "shoes",
+      "expected_human_bucket": "zero"
     }
   ],
   "files": [
+    {
+      "path": "preparation/hard-reuse-unknown-fallback/current-shoes-lossless.webp",
+      "sha256": "80affd06b5c22628a32548792128f0789e611f7f36b434850047e1fc93dfef70",
+      "bytes": 827992,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "format": "WEBP",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "has_transparency": true
+    },
     {
       "path": "preparation/hard-reuse-unknown-fallback/current-shoes.png",
       "sha256": "a4424ff7f32753123e9c2e2ec3b119b9a71ea2e8b66bc126238dceb83473716e",
