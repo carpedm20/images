@@ -1,7 +1,9 @@
 # Generation prompts
 
-All fixtures were generated with OpenAI's built-in image generation tool on
-2026-08-20. No reference image was used.
+All original visual fixtures were generated with OpenAI's built-in image
+generation tool on 2026-08-20. No third-party or user-supplied reference image
+was used. The matched side subject is the one noted exception to reference-free
+generation: it is an edit of the generated front subject.
 
 Every prompt shared this contract:
 
