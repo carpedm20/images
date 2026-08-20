@@ -2,6 +2,7 @@
   "schema_version": 2,
   "suite": "vto_input_validation",
   "version": "v1",
+  "live_verification_passes": 3,
   "difficulty_scale": {
     "easy": "One dominant signal and the shortest valid policy path.",
     "medium": "Two interacting signals or a common ecommerce presentation trap.",
