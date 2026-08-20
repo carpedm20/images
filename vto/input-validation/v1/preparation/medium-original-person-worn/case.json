@@ -1,0 +1,41 @@
+{
+  "id": "preparation_medium_original_person_worn",
+  "folder": "preparation/medium-original-person-worn",
+  "family": "preparation",
+  "difficulty": "medium",
+  "tier": "gating",
+  "purpose": "A known person-worn product takes SAM3 preparation rather than background-only extraction.",
+  "coverage": [
+    "human:one",
+    "preparation:sam3",
+    "presentation:modeled"
+  ],
+  "preparation_checks": [
+    {
+      "file": "current-modeled-top.png",
+      "reusable_source": false,
+      "person_presence": "present",
+      "expected_strategy": "sam3"
+    }
+  ],
+  "files": [
+    {
+      "path": "preparation/medium-original-person-worn/current-modeled-top.png",
+      "sha256": "87b888cabb9fb9fa2df65e5f509a79b0bdd50ecdc6ada3a3052ae4b219ea38ba",
+      "bytes": 1946460,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "preparation/medium-original-person-worn/person-front.png",
+      "sha256": "f0957883f049840ade86651837b6978c6836495adad21ddc28ab31de8c824e0e",
+      "bytes": 1692186,
+      "width": 862,
+      "height": 1825,
+      "mode": "RGB",
+      "format": "PNG"
+    }
+  ]
+}

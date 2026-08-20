@@ -1,0 +1,41 @@
+{
+  "id": "outfit_image_medium_categoryless_promotion",
+  "folder": "outfit-image/medium-categoryless-promotion",
+  "family": "outfit_image",
+  "difficulty": "medium",
+  "tier": "gating",
+  "purpose": "A categoryless single-human product is promoted before category classification and carries person-anchored SAM3 evidence.",
+  "coverage": [
+    "human:face_clear",
+    "human:one",
+    "input:outfit_image",
+    "preparation:sam3"
+  ],
+  "subject_checks": [
+    {
+      "file": "current-categoryless.png",
+      "expected_people": "one",
+      "expected_decision": "promote_outfit"
+    }
+  ],
+  "files": [
+    {
+      "path": "outfit-image/medium-categoryless-promotion/current-categoryless.png",
+      "sha256": "d3b498cd91c20b84dc3580744f637ed52fba34ccfcd1eabef3ac082f972d2d00",
+      "bytes": 1652049,
+      "width": 864,
+      "height": 1821,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "outfit-image/medium-categoryless-promotion/person-front.png",
+      "sha256": "f0957883f049840ade86651837b6978c6836495adad21ddc28ab31de8c824e0e",
+      "bytes": 1692186,
+      "width": 862,
+      "height": 1825,
+      "mode": "RGB",
+      "format": "PNG"
+    }
+  ]
+}

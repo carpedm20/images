@@ -1,0 +1,101 @@
+{
+  "id": "subject_hard_multiple_or_obscured_human",
+  "folder": "subject/hard-multiple-or-obscured-human",
+  "family": "subject",
+  "difficulty": "hard",
+  "tier": "gating",
+  "purpose": "Multiple people, an obscured face, and a threshold-small person distinguish raw count from usable evidence and rescue logic.",
+  "coverage": [
+    "human:face_obscured",
+    "human:multiple",
+    "human:one",
+    "human:small_person",
+    "presentation:multi_model",
+    "subject:side"
+  ],
+  "subject_checks": [
+    {
+      "file": "current-two-models.png",
+      "expected_people": "multiple",
+      "expected_decision": "keep_product"
+    },
+    {
+      "file": "current-back-person.png",
+      "expected_people": "one",
+      "expected_decision": "promote_if_edge_usable"
+    },
+    {
+      "file": "current-small-single-person.png",
+      "expected_people": "one",
+      "expected_decision": "face_sam3_rescue_or_keep_product"
+    }
+  ],
+  "live_checks": [
+    {
+      "file": "current-two-models.png",
+      "kind": "human_detection",
+      "tier": "gating",
+      "expected_raw_person_bucket": "multiple",
+      "expected_usable_human_bucket": "multiple"
+    },
+    {
+      "file": "current-back-person.png",
+      "kind": "human_detection",
+      "tier": "gating",
+      "expected_raw_person_bucket": "one",
+      "expected_usable_human_bucket": "one"
+    },
+    {
+      "file": "current-small-single-person.png",
+      "kind": "human_detection",
+      "tier": "gating",
+      "expected_raw_person_bucket": "one",
+      "expected_usable_human_bucket": "zero"
+    },
+    {
+      "file": "person-side.png",
+      "kind": "human_detection",
+      "tier": "gating",
+      "expected_raw_person_bucket": "one",
+      "expected_usable_human_bucket": "one"
+    }
+  ],
+  "files": [
+    {
+      "path": "subject/hard-multiple-or-obscured-human/current-back-person.png",
+      "sha256": "87b888cabb9fb9fa2df65e5f509a79b0bdd50ecdc6ada3a3052ae4b219ea38ba",
+      "bytes": 1946460,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "subject/hard-multiple-or-obscured-human/current-small-single-person.png",
+      "sha256": "bc80dc67c3995ed4a7d8384c0ba155011b191b9aaf2e595d352fa5fb17c281ad",
+      "bytes": 1439513,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "subject/hard-multiple-or-obscured-human/current-two-models.png",
+      "sha256": "885a376fb6388703403b8e0dbfd97fd47c915c02734aad6a16bd7be40f3d2f78",
+      "bytes": 1780201,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "subject/hard-multiple-or-obscured-human/person-side.png",
+      "sha256": "76346da6e27cbc6d4c22d54cd5c8afcc06b35f5874e14cb09477a18921099715",
+      "bytes": 1556580,
+      "width": 862,
+      "height": 1825,
+      "mode": "RGB",
+      "format": "PNG"
+    }
+  ]
+}

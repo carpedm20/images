@@ -1,0 +1,94 @@
+{
+  "id": "body_mode_medium_one_piece_accessories",
+  "folder": "body-mode/medium-one-piece-accessories",
+  "family": "body_mode",
+  "difficulty": "medium",
+  "tier": "gating",
+  "purpose": "An accessory current item inherits the newest remembered body mode while retaining other accessory slots.",
+  "coverage": [
+    "state:accessory_inherits_body_mode",
+    "state:one_piece_mode"
+  ],
+  "mix_match_steps": [
+    {
+      "id": "add_bag_to_one_piece",
+      "current": {
+        "file": "current-bag.png",
+        "category": "bag"
+      },
+      "candidates": [
+        {
+          "file": "remembered-one-piece.png",
+          "category": "one_piece",
+          "minute": 1
+        },
+        {
+          "file": "remembered-shoes.png",
+          "category": "shoes",
+          "minute": 2
+        },
+        {
+          "file": "remembered-headwear.png",
+          "category": "headwear",
+          "minute": 3
+        }
+      ],
+      "expected_files": [
+        "remembered-one-piece.png",
+        "remembered-shoes.png",
+        "current-bag.png",
+        "remembered-headwear.png"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "body-mode/medium-one-piece-accessories/current-bag.png",
+      "sha256": "0f9b4dd25d5de28e85ec9ee48ab27aa3f5003636a0f9f94371637d6e56ce9983",
+      "bytes": 840511,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "body-mode/medium-one-piece-accessories/person-front.png",
+      "sha256": "f0957883f049840ade86651837b6978c6836495adad21ddc28ab31de8c824e0e",
+      "bytes": 1692186,
+      "width": 862,
+      "height": 1825,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "body-mode/medium-one-piece-accessories/remembered-headwear.png",
+      "sha256": "01f2001773c9a5bc5b5395953ecab03e70e75bd24d62cbad24771765ae60feaa",
+      "bytes": 1712081,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "body-mode/medium-one-piece-accessories/remembered-one-piece.png",
+      "sha256": "f26697a8c9fb1c8cea5432cadcefccdb4efdabeadf799bb67b3a5c54f5a62013",
+      "bytes": 2662167,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "body-mode/medium-one-piece-accessories/remembered-shoes.png",
+      "sha256": "a4424ff7f32753123e9c2e2ec3b119b9a71ea2e8b66bc126238dceb83473716e",
+      "bytes": 1305731,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "format": "PNG",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "has_transparency": true
+    }
+  ]
+}

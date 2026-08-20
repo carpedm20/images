@@ -1,0 +1,132 @@
+{
+  "id": "body_mode_hard_round_trip",
+  "folder": "body-mode/hard-round-trip",
+  "family": "body_mode",
+  "difficulty": "hard",
+  "tier": "gating",
+  "purpose": "Separates switch to one-piece, then a new top restores the remembered bottom without reviving the old top.",
+  "coverage": [
+    "state:one_piece_to_separates",
+    "state:same_slot_replacement"
+  ],
+  "mix_match_steps": [
+    {
+      "id": "switch_to_one_piece",
+      "current": {
+        "file": "one-piece.png",
+        "category": "one_piece"
+      },
+      "candidates": [
+        {
+          "file": "top-old.png",
+          "category": "top",
+          "minute": 1
+        },
+        {
+          "file": "bottom.png",
+          "category": "bottom",
+          "minute": 2
+        },
+        {
+          "file": "headwear.png",
+          "category": "headwear",
+          "minute": 3
+        }
+      ],
+      "expected_files": [
+        "one-piece.png",
+        "headwear.png"
+      ]
+    },
+    {
+      "id": "new_top_restores_separates",
+      "current": {
+        "file": "top-new.png",
+        "category": "top"
+      },
+      "candidates": [
+        {
+          "file": "top-old.png",
+          "category": "top",
+          "minute": 1
+        },
+        {
+          "file": "bottom.png",
+          "category": "bottom",
+          "minute": 2
+        },
+        {
+          "file": "headwear.png",
+          "category": "headwear",
+          "minute": 3
+        },
+        {
+          "file": "one-piece.png",
+          "category": "one_piece",
+          "minute": 4
+        }
+      ],
+      "expected_files": [
+        "top-new.png",
+        "bottom.png",
+        "headwear.png"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "body-mode/hard-round-trip/bottom.png",
+      "sha256": "0500022bb341d6f556cad166a515c1efb2105946515dbe8d666aa2e2c5e6fc6a",
+      "bytes": 1426658,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "body-mode/hard-round-trip/headwear.png",
+      "sha256": "01f2001773c9a5bc5b5395953ecab03e70e75bd24d62cbad24771765ae60feaa",
+      "bytes": 1712081,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "body-mode/hard-round-trip/one-piece.png",
+      "sha256": "f26697a8c9fb1c8cea5432cadcefccdb4efdabeadf799bb67b3a5c54f5a62013",
+      "bytes": 2662167,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "body-mode/hard-round-trip/person-front.png",
+      "sha256": "f0957883f049840ade86651837b6978c6836495adad21ddc28ab31de8c824e0e",
+      "bytes": 1692186,
+      "width": 862,
+      "height": 1825,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "body-mode/hard-round-trip/top-new.png",
+      "sha256": "27df0d19a556100f54c69d8655e0ca2f85a890fec4359fad498bbaa38761b20d",
+      "bytes": 2554140,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "body-mode/hard-round-trip/top-old.png",
+      "sha256": "a8047b572f1f46fc68547cae04fa48e6bc6249118d544f85f5260c3a64e5b422",
+      "bytes": 2049300,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    }
+  ]
+}

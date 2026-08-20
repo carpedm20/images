@@ -1,0 +1,92 @@
+{
+  "id": "preparation_hard_reuse_unknown_fallback",
+  "folder": "preparation/hard-reuse-unknown-fallback",
+  "family": "preparation",
+  "difficulty": "hard",
+  "tier": "gating",
+  "purpose": "Prepared reuse, detector-unknown routing, sparse alpha, and a missing prepared fetch exercise every remaining source/evidence branch.",
+  "coverage": [
+    "category:shoes",
+    "human:unknown",
+    "media:rgba",
+    "preparation:prepared_fetch_fallback",
+    "preparation:reuse",
+    "preparation:sam3_route",
+    "preparation:transparent_alpha"
+  ],
+  "preparation_checks": [
+    {
+      "file": "prepared-shoes.png",
+      "reusable_source": true,
+      "person_presence": null,
+      "expected_strategy": "reuse"
+    },
+    {
+      "file": "current-shoes.png",
+      "reusable_source": false,
+      "person_presence": "unknown",
+      "expected_strategy": "sam3_route"
+    },
+    {
+      "file": "remembered-top-original.png",
+      "reusable_source": false,
+      "person_presence": "absent",
+      "prepared_fetch": "missing",
+      "expected_effective_source": "original",
+      "expected_strategy": "birefnet"
+    }
+  ],
+  "live_checks": [
+    {
+      "file": "current-shoes.png",
+      "kind": "product_category",
+      "tier": "gating",
+      "expected_category": "shoes",
+      "expected_human_bucket": "zero"
+    }
+  ],
+  "files": [
+    {
+      "path": "preparation/hard-reuse-unknown-fallback/current-shoes.png",
+      "sha256": "a4424ff7f32753123e9c2e2ec3b119b9a71ea2e8b66bc126238dceb83473716e",
+      "bytes": 1305731,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "format": "PNG",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "has_transparency": true
+    },
+    {
+      "path": "preparation/hard-reuse-unknown-fallback/person-front.png",
+      "sha256": "f0957883f049840ade86651837b6978c6836495adad21ddc28ab31de8c824e0e",
+      "bytes": 1692186,
+      "width": 862,
+      "height": 1825,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "preparation/hard-reuse-unknown-fallback/prepared-shoes.png",
+      "sha256": "a4424ff7f32753123e9c2e2ec3b119b9a71ea2e8b66bc126238dceb83473716e",
+      "bytes": 1305731,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "format": "PNG",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "has_transparency": true
+    },
+    {
+      "path": "preparation/hard-reuse-unknown-fallback/remembered-top-original.png",
+      "sha256": "a8047b572f1f46fc68547cae04fa48e6bc6249118d544f85f5260c3a64e5b422",
+      "bytes": 2049300,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    }
+  ]
+}

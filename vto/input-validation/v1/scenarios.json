@@ -1,0 +1,1017 @@
+{
+  "schema_version": 2,
+  "suite": "vto_input_validation",
+  "version": "v1",
+  "difficulty_scale": {
+    "easy": "One dominant signal and the shortest valid policy path.",
+    "medium": "Two interacting signals or a common ecommerce presentation trap.",
+    "hard": "A threshold boundary, state transition, ambiguity, or high-cardinality composition."
+  },
+  "required_coverage": [
+    "category:accessory",
+    "category:bag",
+    "category:bottom",
+    "category:eyewear",
+    "category:headwear",
+    "category:one_piece",
+    "category:outerwear",
+    "category:shoes",
+    "category:top",
+    "failure:ambiguous_accessory",
+    "failure:optional_missing_state",
+    "failure:rigid_object",
+    "failure:textile_object",
+    "failure:unsafe_winner_no_resurrection",
+    "failure:wrong_scale",
+    "failure:wrong_wearer",
+    "human:face_clear",
+    "human:face_obscured",
+    "human:multiple",
+    "human:one",
+    "human:small_person",
+    "human:unknown",
+    "human:zero",
+    "input:outfit_image",
+    "input:product",
+    "media:portrait",
+    "media:rgb",
+    "media:rgba",
+    "media:square",
+    "preparation:birefnet",
+    "preparation:prepared_fetch_fallback",
+    "preparation:reuse",
+    "preparation:sam3",
+    "preparation:sam3_route",
+    "preparation:transparent_alpha",
+    "presentation:close_crop",
+    "presentation:complex_silhouette",
+    "presentation:dense_graphics",
+    "presentation:dense_pseudo_text",
+    "presentation:flat_lay",
+    "presentation:low_contrast_dark",
+    "presentation:low_contrast_light",
+    "presentation:modeled",
+    "presentation:multi_model",
+    "presentation:sparse_detail",
+    "presentation:technical_construction",
+    "presentation:tiny_product",
+    "state:accessory_inherits_body_mode",
+    "state:full_accessory_stack",
+    "state:layered_upper",
+    "state:latest_upper_wins",
+    "state:one_piece_mode",
+    "state:one_piece_to_separates",
+    "state:outfit_exclusive",
+    "state:same_slot_replacement",
+    "state:separates",
+    "state:single_slot",
+    "subject:front",
+    "subject:side"
+  ],
+  "cases": [
+    {
+      "id": "admission_easy_flat_graphic_top",
+      "folder": "admission/easy-flat-graphic-top",
+      "family": "admission",
+      "difficulty": "easy",
+      "tier": "gating",
+      "purpose": "A clearly structured adult top remains valid even when a large illustration dominates the fabric.",
+      "coverage": [
+        "category:top",
+        "human:zero",
+        "input:product",
+        "media:rgb",
+        "media:square",
+        "presentation:dense_graphics",
+        "presentation:flat_lay"
+      ],
+      "live_checks": [
+        {
+          "file": "current-top.png",
+          "kind": "product_category",
+          "tier": "gating",
+          "expected_category": "top",
+          "expected_human_bucket": "zero"
+        }
+      ]
+    },
+    {
+      "id": "admission_medium_modeled_and_cropped_top",
+      "folder": "admission/medium-modeled-and-cropped-top",
+      "family": "admission",
+      "difficulty": "medium",
+      "tier": "gating",
+      "purpose": "Modeled and close-cropped dense-print tops must not be rejected or delayed by print complexity.",
+      "coverage": [
+        "category:top",
+        "human:one",
+        "input:product",
+        "presentation:close_crop",
+        "presentation:dense_pseudo_text",
+        "presentation:modeled"
+      ],
+      "live_checks": [
+        {
+          "file": "current-top-modeled.png",
+          "kind": "product_category",
+          "tier": "gating",
+          "expected_category": "top",
+          "expected_human_bucket": "one_or_more"
+        },
+        {
+          "file": "current-top-cropped.png",
+          "kind": "product_category",
+          "tier": "gating",
+          "expected_category": "top",
+          "expected_human_bucket": "zero"
+        }
+      ]
+    },
+    {
+      "id": "admission_hard_scope_boundaries",
+      "folder": "admission/hard-scope-boundaries",
+      "family": "admission",
+      "difficulty": "hard",
+      "tier": "challenge",
+      "purpose": "Sewn textiles, pet wear, and doll-scale clothing expose the semantic boundary beyond visual clothing cues.",
+      "coverage": [
+        "failure:ambiguous_accessory",
+        "failure:textile_object",
+        "failure:wrong_scale",
+        "failure:wrong_wearer",
+        "input:product"
+      ],
+      "live_checks": [
+        {
+          "file": "current-car-seat-cover.png",
+          "kind": "product_category",
+          "tier": "challenge",
+          "expected_category": null,
+          "expected_human_bucket": "zero"
+        },
+        {
+          "file": "current-blanket.png",
+          "kind": "product_category",
+          "tier": "challenge",
+          "expected_category": null,
+          "expected_human_bucket": "zero"
+        },
+        {
+          "file": "current-dog-sweater.png",
+          "kind": "product_category",
+          "tier": "challenge",
+          "expected_category": null,
+          "expected_human_bucket": "zero"
+        },
+        {
+          "file": "current-doll-outfit.png",
+          "kind": "product_category",
+          "tier": "challenge",
+          "expected_category": null,
+          "expected_human_bucket": "zero"
+        }
+      ]
+    },
+    {
+      "id": "subject_easy_front_avatar",
+      "folder": "subject/easy-front-avatar",
+      "family": "subject",
+      "difficulty": "easy",
+      "tier": "gating",
+      "purpose": "A single complete front-facing subject supplies an unambiguous VTO person source.",
+      "coverage": [
+        "media:portrait",
+        "state:single_slot",
+        "subject:front"
+      ],
+      "subject_checks": [
+        {
+          "file": "person-front.png",
+          "expected_people": "one",
+          "view": "front"
+        }
+      ],
+      "live_checks": [
+        {
+          "file": "person-front.png",
+          "kind": "human_detection",
+          "tier": "gating",
+          "expected_raw_person_bucket": "one",
+          "expected_usable_human_bucket": "one"
+        }
+      ]
+    },
+    {
+      "id": "subject_medium_single_human_promotion",
+      "folder": "subject/medium-single-human-promotion",
+      "family": "subject",
+      "difficulty": "medium",
+      "tier": "gating",
+      "purpose": "A categoryless current image with one clear person is promoted to the exclusive outfit-image path.",
+      "coverage": [
+        "human:face_clear",
+        "human:one",
+        "input:outfit_image",
+        "preparation:sam3",
+        "presentation:modeled",
+        "subject:front"
+      ],
+      "subject_checks": [
+        {
+          "file": "current-single-person-outfit.png",
+          "expected_people": "one",
+          "expected_decision": "promote_outfit"
+        }
+      ],
+      "live_checks": [
+        {
+          "file": "current-single-person-outfit.png",
+          "kind": "human_detection",
+          "tier": "gating",
+          "expected_raw_person_bucket": "one",
+          "expected_usable_human_bucket": "one"
+        }
+      ]
+    },
+    {
+      "id": "subject_hard_multiple_or_obscured_human",
+      "folder": "subject/hard-multiple-or-obscured-human",
+      "family": "subject",
+      "difficulty": "hard",
+      "tier": "gating",
+      "purpose": "Multiple people, an obscured face, and a threshold-small person distinguish raw count from usable evidence and rescue logic.",
+      "coverage": [
+        "human:face_obscured",
+        "human:multiple",
+        "human:one",
+        "human:small_person",
+        "presentation:multi_model",
+        "subject:side"
+      ],
+      "subject_checks": [
+        {
+          "file": "current-two-models.png",
+          "expected_people": "multiple",
+          "expected_decision": "keep_product"
+        },
+        {
+          "file": "current-back-person.png",
+          "expected_people": "one",
+          "expected_decision": "promote_if_edge_usable"
+        },
+        {
+          "file": "current-small-single-person.png",
+          "expected_people": "one",
+          "expected_decision": "face_sam3_rescue_or_keep_product"
+        }
+      ],
+      "live_checks": [
+        {
+          "file": "current-two-models.png",
+          "kind": "human_detection",
+          "tier": "gating",
+          "expected_raw_person_bucket": "multiple",
+          "expected_usable_human_bucket": "multiple"
+        },
+        {
+          "file": "current-back-person.png",
+          "kind": "human_detection",
+          "tier": "gating",
+          "expected_raw_person_bucket": "one",
+          "expected_usable_human_bucket": "one"
+        },
+        {
+          "file": "current-small-single-person.png",
+          "kind": "human_detection",
+          "tier": "gating",
+          "expected_raw_person_bucket": "one",
+          "expected_usable_human_bucket": "zero"
+        },
+        {
+          "file": "person-side.png",
+          "kind": "human_detection",
+          "tier": "gating",
+          "expected_raw_person_bucket": "one",
+          "expected_usable_human_bucket": "one"
+        }
+      ]
+    },
+    {
+      "id": "preparation_easy_original_no_human",
+      "folder": "preparation/easy-original-no-human",
+      "family": "preparation",
+      "difficulty": "easy",
+      "tier": "gating",
+      "purpose": "A known person-free original takes the BiRefNet preparation path.",
+      "coverage": [
+        "category:bottom",
+        "human:zero",
+        "preparation:birefnet",
+        "presentation:low_contrast_light"
+      ],
+      "preparation_checks": [
+        {
+          "file": "current-bottom.png",
+          "reusable_source": false,
+          "person_presence": "absent",
+          "expected_strategy": "birefnet"
+        }
+      ],
+      "live_checks": [
+        {
+          "file": "current-bottom.png",
+          "kind": "product_category",
+          "tier": "gating",
+          "expected_category": "bottom",
+          "expected_human_bucket": "zero"
+        }
+      ]
+    },
+    {
+      "id": "preparation_medium_original_person_worn",
+      "folder": "preparation/medium-original-person-worn",
+      "family": "preparation",
+      "difficulty": "medium",
+      "tier": "gating",
+      "purpose": "A known person-worn product takes SAM3 preparation rather than background-only extraction.",
+      "coverage": [
+        "human:one",
+        "preparation:sam3",
+        "presentation:modeled"
+      ],
+      "preparation_checks": [
+        {
+          "file": "current-modeled-top.png",
+          "reusable_source": false,
+          "person_presence": "present",
+          "expected_strategy": "sam3"
+        }
+      ]
+    },
+    {
+      "id": "preparation_hard_reuse_unknown_fallback",
+      "folder": "preparation/hard-reuse-unknown-fallback",
+      "family": "preparation",
+      "difficulty": "hard",
+      "tier": "gating",
+      "purpose": "Prepared reuse, detector-unknown routing, sparse alpha, and a missing prepared fetch exercise every remaining source/evidence branch.",
+      "coverage": [
+        "category:shoes",
+        "human:unknown",
+        "media:rgba",
+        "preparation:prepared_fetch_fallback",
+        "preparation:reuse",
+        "preparation:sam3_route",
+        "preparation:transparent_alpha"
+      ],
+      "preparation_checks": [
+        {
+          "file": "prepared-shoes.png",
+          "reusable_source": true,
+          "person_presence": null,
+          "expected_strategy": "reuse"
+        },
+        {
+          "file": "current-shoes.png",
+          "reusable_source": false,
+          "person_presence": "unknown",
+          "expected_strategy": "sam3_route"
+        },
+        {
+          "file": "remembered-top-original.png",
+          "reusable_source": false,
+          "person_presence": "absent",
+          "prepared_fetch": "missing",
+          "expected_effective_source": "original",
+          "expected_strategy": "birefnet"
+        }
+      ],
+      "live_checks": [
+        {
+          "file": "current-shoes.png",
+          "kind": "product_category",
+          "tier": "gating",
+          "expected_category": "shoes",
+          "expected_human_bucket": "zero"
+        }
+      ]
+    },
+    {
+      "id": "composition_easy_top_bottom",
+      "folder": "composition/easy-top-bottom",
+      "family": "composition",
+      "difficulty": "easy",
+      "tier": "gating",
+      "purpose": "The basic separates flow keeps one remembered top and the current bottom in canonical order.",
+      "coverage": [
+        "state:separates",
+        "subject:front"
+      ],
+      "mix_match_steps": [
+        {
+          "id": "add_bottom",
+          "current": {
+            "file": "current-bottom.png",
+            "category": "bottom"
+          },
+          "candidates": [
+            {
+              "file": "remembered-top.png",
+              "category": "top",
+              "minute": 1
+            }
+          ],
+          "expected_files": [
+            "remembered-top.png",
+            "current-bottom.png"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "composition_medium_top_bottom_shoes",
+      "folder": "composition/medium-top-bottom-shoes",
+      "family": "composition",
+      "difficulty": "medium",
+      "tier": "gating",
+      "purpose": "Footwear is retained after two separate body slots and stays in canonical accessory order.",
+      "coverage": [
+        "category:shoes",
+        "state:separates"
+      ],
+      "mix_match_steps": [
+        {
+          "id": "add_shoes",
+          "current": {
+            "file": "current-shoes.png",
+            "category": "shoes"
+          },
+          "candidates": [
+            {
+              "file": "remembered-top.png",
+              "category": "top",
+              "minute": 1
+            },
+            {
+              "file": "remembered-bottom.png",
+              "category": "bottom",
+              "minute": 2
+            }
+          ],
+          "expected_files": [
+            "remembered-top.png",
+            "remembered-bottom.png",
+            "current-shoes.png"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "composition_hard_seven_slot",
+      "folder": "composition/hard-seven-slot",
+      "family": "composition",
+      "difficulty": "hard",
+      "tier": "gating",
+      "purpose": "A seven-slot separates composition covers every currently supported accessory role without duplicate Composer slots.",
+      "coverage": [
+        "category:accessory",
+        "category:bag",
+        "category:eyewear",
+        "category:headwear",
+        "presentation:low_contrast_dark",
+        "presentation:sparse_detail",
+        "presentation:tiny_product",
+        "state:full_accessory_stack"
+      ],
+      "mix_match_steps": [
+        {
+          "id": "add_bag_to_full_stack",
+          "current": {
+            "file": "current-bag.png",
+            "category": "bag"
+          },
+          "candidates": [
+            {
+              "file": "remembered-top.png",
+              "category": "top",
+              "minute": 1
+            },
+            {
+              "file": "remembered-bottom.png",
+              "category": "bottom",
+              "minute": 2
+            },
+            {
+              "file": "remembered-shoes.png",
+              "category": "shoes",
+              "minute": 3
+            },
+            {
+              "file": "remembered-headwear.png",
+              "category": "headwear",
+              "minute": 4
+            },
+            {
+              "file": "remembered-eyewear.png",
+              "category": "eyewear",
+              "minute": 5
+            },
+            {
+              "file": "remembered-accessory.png",
+              "category": "accessory",
+              "minute": 6
+            }
+          ],
+          "expected_files": [
+            "remembered-top.png",
+            "remembered-bottom.png",
+            "remembered-shoes.png",
+            "current-bag.png",
+            "remembered-headwear.png",
+            "remembered-eyewear.png",
+            "remembered-accessory.png"
+          ]
+        }
+      ],
+      "live_checks": [
+        {
+          "file": "current-bag.png",
+          "kind": "product_category",
+          "tier": "gating",
+          "expected_category": "bag",
+          "expected_human_bucket": "zero"
+        },
+        {
+          "file": "remembered-headwear.png",
+          "kind": "product_category",
+          "tier": "gating",
+          "expected_category": "headwear",
+          "expected_human_bucket": "zero"
+        },
+        {
+          "file": "remembered-eyewear.png",
+          "kind": "product_category",
+          "tier": "gating",
+          "expected_category": "eyewear",
+          "expected_human_bucket": "zero"
+        },
+        {
+          "file": "remembered-accessory.png",
+          "kind": "product_category",
+          "tier": "gating",
+          "expected_category": "accessory",
+          "expected_human_bucket": "zero"
+        }
+      ]
+    },
+    {
+      "id": "upper_body_easy_outerwear",
+      "folder": "upper-body/easy-outerwear",
+      "family": "upper_body",
+      "difficulty": "easy",
+      "tier": "gating",
+      "purpose": "Technical outerwear remains a valid single upper-body slot.",
+      "coverage": [
+        "category:outerwear",
+        "presentation:technical_construction",
+        "state:single_slot"
+      ],
+      "mix_match_steps": [
+        {
+          "id": "outerwear_only",
+          "current": {
+            "file": "current-outerwear.png",
+            "category": "outerwear"
+          },
+          "candidates": [],
+          "expected_files": [
+            "current-outerwear.png"
+          ]
+        }
+      ],
+      "live_checks": [
+        {
+          "file": "current-outerwear.png",
+          "kind": "product_category",
+          "tier": "gating",
+          "expected_category": "outerwear",
+          "expected_human_bucket": "zero"
+        }
+      ]
+    },
+    {
+      "id": "upper_body_medium_latest_wins",
+      "folder": "upper-body/medium-latest-wins",
+      "family": "upper_body",
+      "difficulty": "medium",
+      "tier": "gating",
+      "purpose": "Without layering, the current upper-body category replaces the competing remembered layer in either direction.",
+      "coverage": [
+        "state:latest_upper_wins"
+      ],
+      "mix_match_steps": [
+        {
+          "id": "current_outerwear_wins",
+          "current": {
+            "file": "current-outerwear.png",
+            "category": "outerwear"
+          },
+          "candidates": [
+            {
+              "file": "remembered-top.png",
+              "category": "top",
+              "minute": 1
+            }
+          ],
+          "expected_files": [
+            "current-outerwear.png"
+          ]
+        },
+        {
+          "id": "current_top_wins",
+          "current": {
+            "file": "remembered-top.png",
+            "category": "top"
+          },
+          "candidates": [
+            {
+              "file": "current-outerwear.png",
+              "category": "outerwear",
+              "minute": 2
+            }
+          ],
+          "expected_files": [
+            "remembered-top.png"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "upper_body_hard_layered",
+      "folder": "upper-body/hard-layered",
+      "family": "upper_body",
+      "difficulty": "hard",
+      "tier": "gating",
+      "purpose": "The explicit layered policy preserves top and outerwear before the lower-body slot.",
+      "coverage": [
+        "state:layered_upper"
+      ],
+      "mix_match_steps": [
+        {
+          "id": "layer_top_outerwear_bottom",
+          "layered_upper_body": true,
+          "current": {
+            "file": "current-bottom.png",
+            "category": "bottom"
+          },
+          "candidates": [
+            {
+              "file": "remembered-top.png",
+              "category": "top",
+              "minute": 1
+            },
+            {
+              "file": "remembered-outerwear.png",
+              "category": "outerwear",
+              "minute": 2
+            }
+          ],
+          "expected_files": [
+            "remembered-top.png",
+            "remembered-outerwear.png",
+            "current-bottom.png"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "body_mode_easy_one_piece",
+      "folder": "body-mode/easy-one-piece",
+      "family": "body_mode",
+      "difficulty": "easy",
+      "tier": "gating",
+      "purpose": "A complex but complete dress selects the one-piece body mode.",
+      "coverage": [
+        "category:one_piece",
+        "presentation:complex_silhouette",
+        "state:one_piece_mode"
+      ],
+      "mix_match_steps": [
+        {
+          "id": "one_piece_only",
+          "current": {
+            "file": "current-one-piece.png",
+            "category": "one_piece"
+          },
+          "candidates": [],
+          "expected_files": [
+            "current-one-piece.png"
+          ]
+        }
+      ],
+      "live_checks": [
+        {
+          "file": "current-one-piece.png",
+          "kind": "product_category",
+          "tier": "gating",
+          "expected_category": "one_piece",
+          "expected_human_bucket": "zero"
+        }
+      ]
+    },
+    {
+      "id": "body_mode_medium_one_piece_accessories",
+      "folder": "body-mode/medium-one-piece-accessories",
+      "family": "body_mode",
+      "difficulty": "medium",
+      "tier": "gating",
+      "purpose": "An accessory current item inherits the newest remembered body mode while retaining other accessory slots.",
+      "coverage": [
+        "state:accessory_inherits_body_mode",
+        "state:one_piece_mode"
+      ],
+      "mix_match_steps": [
+        {
+          "id": "add_bag_to_one_piece",
+          "current": {
+            "file": "current-bag.png",
+            "category": "bag"
+          },
+          "candidates": [
+            {
+              "file": "remembered-one-piece.png",
+              "category": "one_piece",
+              "minute": 1
+            },
+            {
+              "file": "remembered-shoes.png",
+              "category": "shoes",
+              "minute": 2
+            },
+            {
+              "file": "remembered-headwear.png",
+              "category": "headwear",
+              "minute": 3
+            }
+          ],
+          "expected_files": [
+            "remembered-one-piece.png",
+            "remembered-shoes.png",
+            "current-bag.png",
+            "remembered-headwear.png"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "body_mode_hard_round_trip",
+      "folder": "body-mode/hard-round-trip",
+      "family": "body_mode",
+      "difficulty": "hard",
+      "tier": "gating",
+      "purpose": "Separates switch to one-piece, then a new top restores the remembered bottom without reviving the old top.",
+      "coverage": [
+        "state:one_piece_to_separates",
+        "state:same_slot_replacement"
+      ],
+      "mix_match_steps": [
+        {
+          "id": "switch_to_one_piece",
+          "current": {
+            "file": "one-piece.png",
+            "category": "one_piece"
+          },
+          "candidates": [
+            {
+              "file": "top-old.png",
+              "category": "top",
+              "minute": 1
+            },
+            {
+              "file": "bottom.png",
+              "category": "bottom",
+              "minute": 2
+            },
+            {
+              "file": "headwear.png",
+              "category": "headwear",
+              "minute": 3
+            }
+          ],
+          "expected_files": [
+            "one-piece.png",
+            "headwear.png"
+          ]
+        },
+        {
+          "id": "new_top_restores_separates",
+          "current": {
+            "file": "top-new.png",
+            "category": "top"
+          },
+          "candidates": [
+            {
+              "file": "top-old.png",
+              "category": "top",
+              "minute": 1
+            },
+            {
+              "file": "bottom.png",
+              "category": "bottom",
+              "minute": 2
+            },
+            {
+              "file": "headwear.png",
+              "category": "headwear",
+              "minute": 3
+            },
+            {
+              "file": "one-piece.png",
+              "category": "one_piece",
+              "minute": 4
+            }
+          ],
+          "expected_files": [
+            "top-new.png",
+            "bottom.png",
+            "headwear.png"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "outfit_image_easy_explicit_exclusive",
+      "folder": "outfit-image/easy-explicit-exclusive",
+      "family": "outfit_image",
+      "difficulty": "easy",
+      "tier": "gating",
+      "purpose": "An explicit outfit image is one exclusive fashion asset and ignores remembered products.",
+      "coverage": [
+        "input:outfit_image",
+        "state:outfit_exclusive"
+      ],
+      "mix_match_steps": [
+        {
+          "id": "explicit_outfit_only",
+          "current": {
+            "file": "current-outfit.png",
+            "input_kind": "outfit_image"
+          },
+          "candidates": [
+            {
+              "file": "remembered-top.png",
+              "category": "top",
+              "minute": 1
+            },
+            {
+              "file": "remembered-bottom.png",
+              "category": "bottom",
+              "minute": 2
+            }
+          ],
+          "expected_files": [
+            "current-outfit.png"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "outfit_image_medium_categoryless_promotion",
+      "folder": "outfit-image/medium-categoryless-promotion",
+      "family": "outfit_image",
+      "difficulty": "medium",
+      "tier": "gating",
+      "purpose": "A categoryless single-human product is promoted before category classification and carries person-anchored SAM3 evidence.",
+      "coverage": [
+        "human:face_clear",
+        "human:one",
+        "input:outfit_image",
+        "preparation:sam3"
+      ],
+      "subject_checks": [
+        {
+          "file": "current-categoryless.png",
+          "expected_people": "one",
+          "expected_decision": "promote_outfit"
+        }
+      ]
+    },
+    {
+      "id": "outfit_image_hard_nonpromotable_humans",
+      "folder": "outfit-image/hard-nonpromotable-humans",
+      "family": "outfit_image",
+      "difficulty": "hard",
+      "tier": "gating",
+      "purpose": "Multiple raw people must not promote; small or face-obscured single people exercise threshold and fallback decisions.",
+      "coverage": [
+        "human:face_obscured",
+        "human:multiple",
+        "human:small_person",
+        "subject:side"
+      ],
+      "subject_checks": [
+        {
+          "file": "current-multiple-humans.png",
+          "expected_people": "multiple",
+          "expected_decision": "keep_product"
+        },
+        {
+          "file": "current-obscured-face.png",
+          "expected_people": "one",
+          "expected_decision": "promote_if_edge_usable"
+        },
+        {
+          "file": "current-small-single-person.png",
+          "expected_people": "one",
+          "expected_decision": "face_sam3_rescue_or_keep_product"
+        }
+      ]
+    },
+    {
+      "id": "failure_easy_rigid_object",
+      "folder": "failure/easy-rigid-object",
+      "family": "failure",
+      "difficulty": "easy",
+      "tier": "gating",
+      "purpose": "An obvious mechanical product is rejected at the sole category-admission boundary.",
+      "coverage": [
+        "failure:rigid_object",
+        "human:zero"
+      ],
+      "live_checks": [
+        {
+          "file": "current-pump.png",
+          "kind": "product_category",
+          "tier": "gating",
+          "expected_category": null,
+          "expected_human_bucket": "zero"
+        }
+      ]
+    },
+    {
+      "id": "failure_medium_textile_objects",
+      "folder": "failure/medium-textile-objects",
+      "family": "failure",
+      "difficulty": "medium",
+      "tier": "mixed",
+      "purpose": "Printed home textiles must remain outside VTO even when fabric and graphic cues resemble garments.",
+      "coverage": [
+        "failure:textile_object",
+        "presentation:dense_pseudo_text"
+      ],
+      "live_checks": [
+        {
+          "file": "current-lampshade.png",
+          "kind": "product_category",
+          "tier": "gating",
+          "expected_category": null,
+          "expected_human_bucket": "zero"
+        },
+        {
+          "file": "current-blanket.png",
+          "kind": "product_category",
+          "tier": "challenge",
+          "expected_category": null,
+          "expected_human_bucket": "zero"
+        }
+      ]
+    },
+    {
+      "id": "failure_hard_wrong_wearer_and_missing_state",
+      "folder": "failure/hard-wrong-wearer-and-missing-state",
+      "family": "failure",
+      "difficulty": "hard",
+      "tier": "challenge",
+      "purpose": "Wrong-wearer products remain challenges while an unavailable selected remembered item fails closed without reviving an older slot winner.",
+      "coverage": [
+        "failure:optional_missing_state",
+        "failure:unsafe_winner_no_resurrection",
+        "failure:wrong_scale",
+        "failure:wrong_wearer"
+      ],
+      "state_checks": [
+        {
+          "kind": "missing_selected_candidate",
+          "missing_category": "bottom",
+          "expected_behavior": "omit_without_resurrection"
+        }
+      ],
+      "live_checks": [
+        {
+          "file": "current-dog-sweater.png",
+          "kind": "product_category",
+          "tier": "challenge",
+          "expected_category": null,
+          "expected_human_bucket": "zero"
+        },
+        {
+          "file": "current-doll-outfit.png",
+          "kind": "product_category",
+          "tier": "challenge",
+          "expected_category": null,
+          "expected_human_bucket": "zero"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "preparation_easy_original_no_human",
+  "folder": "preparation/easy-original-no-human",
+  "family": "preparation",
+  "difficulty": "easy",
+  "tier": "gating",
+  "purpose": "A known person-free original takes the BiRefNet preparation path.",
+  "coverage": [
+    "category:bottom",
+    "human:zero",
+    "preparation:birefnet",
+    "presentation:low_contrast_light"
+  ],
+  "preparation_checks": [
+    {
+      "file": "current-bottom.png",
+      "reusable_source": false,
+      "person_presence": "absent",
+      "expected_strategy": "birefnet"
+    }
+  ],
+  "live_checks": [
+    {
+      "file": "current-bottom.png",
+      "kind": "product_category",
+      "tier": "gating",
+      "expected_category": "bottom",
+      "expected_human_bucket": "zero"
+    }
+  ],
+  "files": [
+    {
+      "path": "preparation/easy-original-no-human/current-bottom.png",
+      "sha256": "0500022bb341d6f556cad166a515c1efb2105946515dbe8d666aa2e2c5e6fc6a",
+      "bytes": 1426658,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "preparation/easy-original-no-human/person-front.png",
+      "sha256": "f0957883f049840ade86651837b6978c6836495adad21ddc28ab31de8c824e0e",
+      "bytes": 1692186,
+      "width": 862,
+      "height": 1825,
+      "mode": "RGB",
+      "format": "PNG"
+    }
+  ]
+}

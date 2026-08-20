@@ -1,0 +1,83 @@
+{
+  "id": "admission_hard_scope_boundaries",
+  "folder": "admission/hard-scope-boundaries",
+  "family": "admission",
+  "difficulty": "hard",
+  "tier": "challenge",
+  "purpose": "Sewn textiles, pet wear, and doll-scale clothing expose the semantic boundary beyond visual clothing cues.",
+  "coverage": [
+    "failure:ambiguous_accessory",
+    "failure:textile_object",
+    "failure:wrong_scale",
+    "failure:wrong_wearer",
+    "input:product"
+  ],
+  "live_checks": [
+    {
+      "file": "current-car-seat-cover.png",
+      "kind": "product_category",
+      "tier": "challenge",
+      "expected_category": null,
+      "expected_human_bucket": "zero"
+    },
+    {
+      "file": "current-blanket.png",
+      "kind": "product_category",
+      "tier": "challenge",
+      "expected_category": null,
+      "expected_human_bucket": "zero"
+    },
+    {
+      "file": "current-dog-sweater.png",
+      "kind": "product_category",
+      "tier": "challenge",
+      "expected_category": null,
+      "expected_human_bucket": "zero"
+    },
+    {
+      "file": "current-doll-outfit.png",
+      "kind": "product_category",
+      "tier": "challenge",
+      "expected_category": null,
+      "expected_human_bucket": "zero"
+    }
+  ],
+  "files": [
+    {
+      "path": "admission/hard-scope-boundaries/current-blanket.png",
+      "sha256": "5460c5e3477275923532b85f67aade2308e726db3bbc4e904e5057b9afc9e45d",
+      "bytes": 2871389,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "admission/hard-scope-boundaries/current-car-seat-cover.png",
+      "sha256": "8326c0c7655140e0100999f1049ca8ec91e28e0013216f4633aa8ba8855a8a5a",
+      "bytes": 2018635,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "admission/hard-scope-boundaries/current-dog-sweater.png",
+      "sha256": "5c2d4bd3022db55b62ea0d6150bef5ac3c9396e8f8336758fc192788d4d84f4e",
+      "bytes": 2037745,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "admission/hard-scope-boundaries/current-doll-outfit.png",
+      "sha256": "ebb0078ffaeaff90d44a16642d5e408d788666aa08ddc566437f7f2ba906fdf4",
+      "bytes": 1954730,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    }
+  ]
+}

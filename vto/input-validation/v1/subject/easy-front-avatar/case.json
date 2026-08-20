@@ -1,0 +1,49 @@
+{
+  "id": "subject_easy_front_avatar",
+  "folder": "subject/easy-front-avatar",
+  "family": "subject",
+  "difficulty": "easy",
+  "tier": "gating",
+  "purpose": "A single complete front-facing subject supplies an unambiguous VTO person source.",
+  "coverage": [
+    "media:portrait",
+    "state:single_slot",
+    "subject:front"
+  ],
+  "subject_checks": [
+    {
+      "file": "person-front.png",
+      "expected_people": "one",
+      "view": "front"
+    }
+  ],
+  "live_checks": [
+    {
+      "file": "person-front.png",
+      "kind": "human_detection",
+      "tier": "gating",
+      "expected_raw_person_bucket": "one",
+      "expected_usable_human_bucket": "one"
+    }
+  ],
+  "files": [
+    {
+      "path": "subject/easy-front-avatar/current-top.png",
+      "sha256": "a8047b572f1f46fc68547cae04fa48e6bc6249118d544f85f5260c3a64e5b422",
+      "bytes": 2049300,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "subject/easy-front-avatar/person-front.png",
+      "sha256": "f0957883f049840ade86651837b6978c6836495adad21ddc28ab31de8c824e0e",
+      "bytes": 1692186,
+      "width": 862,
+      "height": 1825,
+      "mode": "RGB",
+      "format": "PNG"
+    }
+  ]
+}

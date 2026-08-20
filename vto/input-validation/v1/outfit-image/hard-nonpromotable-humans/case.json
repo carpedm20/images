@@ -1,0 +1,69 @@
+{
+  "id": "outfit_image_hard_nonpromotable_humans",
+  "folder": "outfit-image/hard-nonpromotable-humans",
+  "family": "outfit_image",
+  "difficulty": "hard",
+  "tier": "gating",
+  "purpose": "Multiple raw people must not promote; small or face-obscured single people exercise threshold and fallback decisions.",
+  "coverage": [
+    "human:face_obscured",
+    "human:multiple",
+    "human:small_person",
+    "subject:side"
+  ],
+  "subject_checks": [
+    {
+      "file": "current-multiple-humans.png",
+      "expected_people": "multiple",
+      "expected_decision": "keep_product"
+    },
+    {
+      "file": "current-obscured-face.png",
+      "expected_people": "one",
+      "expected_decision": "promote_if_edge_usable"
+    },
+    {
+      "file": "current-small-single-person.png",
+      "expected_people": "one",
+      "expected_decision": "face_sam3_rescue_or_keep_product"
+    }
+  ],
+  "files": [
+    {
+      "path": "outfit-image/hard-nonpromotable-humans/current-multiple-humans.png",
+      "sha256": "885a376fb6388703403b8e0dbfd97fd47c915c02734aad6a16bd7be40f3d2f78",
+      "bytes": 1780201,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "outfit-image/hard-nonpromotable-humans/current-obscured-face.png",
+      "sha256": "87b888cabb9fb9fa2df65e5f509a79b0bdd50ecdc6ada3a3052ae4b219ea38ba",
+      "bytes": 1946460,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "outfit-image/hard-nonpromotable-humans/current-small-single-person.png",
+      "sha256": "bc80dc67c3995ed4a7d8384c0ba155011b191b9aaf2e595d352fa5fb17c281ad",
+      "bytes": 1439513,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "outfit-image/hard-nonpromotable-humans/person-side.png",
+      "sha256": "76346da6e27cbc6d4c22d54cd5c8afcc06b35f5874e14cb09477a18921099715",
+      "bytes": 1556580,
+      "width": 862,
+      "height": 1825,
+      "mode": "RGB",
+      "format": "PNG"
+    }
+  ]
+}

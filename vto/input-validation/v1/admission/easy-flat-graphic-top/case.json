@@ -1,0 +1,37 @@
+{
+  "id": "admission_easy_flat_graphic_top",
+  "folder": "admission/easy-flat-graphic-top",
+  "family": "admission",
+  "difficulty": "easy",
+  "tier": "gating",
+  "purpose": "A clearly structured adult top remains valid even when a large illustration dominates the fabric.",
+  "coverage": [
+    "category:top",
+    "human:zero",
+    "input:product",
+    "media:rgb",
+    "media:square",
+    "presentation:dense_graphics",
+    "presentation:flat_lay"
+  ],
+  "live_checks": [
+    {
+      "file": "current-top.png",
+      "kind": "product_category",
+      "tier": "gating",
+      "expected_category": "top",
+      "expected_human_bucket": "zero"
+    }
+  ],
+  "files": [
+    {
+      "path": "admission/easy-flat-graphic-top/current-top.png",
+      "sha256": "a8047b572f1f46fc68547cae04fa48e6bc6249118d544f85f5260c3a64e5b422",
+      "bytes": 2049300,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    }
+  ]
+}

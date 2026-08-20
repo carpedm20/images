@@ -1,0 +1,41 @@
+{
+  "id": "failure_easy_rigid_object",
+  "folder": "failure/easy-rigid-object",
+  "family": "failure",
+  "difficulty": "easy",
+  "tier": "gating",
+  "purpose": "An obvious mechanical product is rejected at the sole category-admission boundary.",
+  "coverage": [
+    "failure:rigid_object",
+    "human:zero"
+  ],
+  "live_checks": [
+    {
+      "file": "current-pump.png",
+      "kind": "product_category",
+      "tier": "gating",
+      "expected_category": null,
+      "expected_human_bucket": "zero"
+    }
+  ],
+  "files": [
+    {
+      "path": "failure/easy-rigid-object/current-pump.png",
+      "sha256": "10c4118e6b3f451f23279461986851fe956bf7e0812042299f81955b53425ed1",
+      "bytes": 1472601,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "failure/easy-rigid-object/person-front.png",
+      "sha256": "f0957883f049840ade86651837b6978c6836495adad21ddc28ab31de8c824e0e",
+      "bytes": 1692186,
+      "width": 862,
+      "height": 1825,
+      "mode": "RGB",
+      "format": "PNG"
+    }
+  ]
+}

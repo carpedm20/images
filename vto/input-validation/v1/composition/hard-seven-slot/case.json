@@ -1,0 +1,175 @@
+{
+  "id": "composition_hard_seven_slot",
+  "folder": "composition/hard-seven-slot",
+  "family": "composition",
+  "difficulty": "hard",
+  "tier": "gating",
+  "purpose": "A seven-slot separates composition covers every currently supported accessory role without duplicate Composer slots.",
+  "coverage": [
+    "category:accessory",
+    "category:bag",
+    "category:eyewear",
+    "category:headwear",
+    "presentation:low_contrast_dark",
+    "presentation:sparse_detail",
+    "presentation:tiny_product",
+    "state:full_accessory_stack"
+  ],
+  "mix_match_steps": [
+    {
+      "id": "add_bag_to_full_stack",
+      "current": {
+        "file": "current-bag.png",
+        "category": "bag"
+      },
+      "candidates": [
+        {
+          "file": "remembered-top.png",
+          "category": "top",
+          "minute": 1
+        },
+        {
+          "file": "remembered-bottom.png",
+          "category": "bottom",
+          "minute": 2
+        },
+        {
+          "file": "remembered-shoes.png",
+          "category": "shoes",
+          "minute": 3
+        },
+        {
+          "file": "remembered-headwear.png",
+          "category": "headwear",
+          "minute": 4
+        },
+        {
+          "file": "remembered-eyewear.png",
+          "category": "eyewear",
+          "minute": 5
+        },
+        {
+          "file": "remembered-accessory.png",
+          "category": "accessory",
+          "minute": 6
+        }
+      ],
+      "expected_files": [
+        "remembered-top.png",
+        "remembered-bottom.png",
+        "remembered-shoes.png",
+        "current-bag.png",
+        "remembered-headwear.png",
+        "remembered-eyewear.png",
+        "remembered-accessory.png"
+      ]
+    }
+  ],
+  "live_checks": [
+    {
+      "file": "current-bag.png",
+      "kind": "product_category",
+      "tier": "gating",
+      "expected_category": "bag",
+      "expected_human_bucket": "zero"
+    },
+    {
+      "file": "remembered-headwear.png",
+      "kind": "product_category",
+      "tier": "gating",
+      "expected_category": "headwear",
+      "expected_human_bucket": "zero"
+    },
+    {
+      "file": "remembered-eyewear.png",
+      "kind": "product_category",
+      "tier": "gating",
+      "expected_category": "eyewear",
+      "expected_human_bucket": "zero"
+    },
+    {
+      "file": "remembered-accessory.png",
+      "kind": "product_category",
+      "tier": "gating",
+      "expected_category": "accessory",
+      "expected_human_bucket": "zero"
+    }
+  ],
+  "files": [
+    {
+      "path": "composition/hard-seven-slot/current-bag.png",
+      "sha256": "0f9b4dd25d5de28e85ec9ee48ab27aa3f5003636a0f9f94371637d6e56ce9983",
+      "bytes": 840511,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "composition/hard-seven-slot/person-front.png",
+      "sha256": "f0957883f049840ade86651837b6978c6836495adad21ddc28ab31de8c824e0e",
+      "bytes": 1692186,
+      "width": 862,
+      "height": 1825,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "composition/hard-seven-slot/remembered-accessory.png",
+      "sha256": "4038096428af05a485474b0d538f1e3e97fd636a93c6c584b34cd464d44e2d28",
+      "bytes": 1667798,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "composition/hard-seven-slot/remembered-bottom.png",
+      "sha256": "0500022bb341d6f556cad166a515c1efb2105946515dbe8d666aa2e2c5e6fc6a",
+      "bytes": 1426658,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "composition/hard-seven-slot/remembered-eyewear.png",
+      "sha256": "bb5fb5c38aad203e6ed114787e43567117da2955e563f88de846e59ae973181d",
+      "bytes": 831878,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "composition/hard-seven-slot/remembered-headwear.png",
+      "sha256": "01f2001773c9a5bc5b5395953ecab03e70e75bd24d62cbad24771765ae60feaa",
+      "bytes": 1712081,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "composition/hard-seven-slot/remembered-shoes.png",
+      "sha256": "a4424ff7f32753123e9c2e2ec3b119b9a71ea2e8b66bc126238dceb83473716e",
+      "bytes": 1305731,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "format": "PNG",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "has_transparency": true
+    },
+    {
+      "path": "composition/hard-seven-slot/remembered-top.png",
+      "sha256": "a8047b572f1f46fc68547cae04fa48e6bc6249118d544f85f5260c3a64e5b422",
+      "bytes": 2049300,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    }
+  ]
+}

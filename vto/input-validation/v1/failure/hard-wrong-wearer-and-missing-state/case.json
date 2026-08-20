@@ -1,0 +1,75 @@
+{
+  "id": "failure_hard_wrong_wearer_and_missing_state",
+  "folder": "failure/hard-wrong-wearer-and-missing-state",
+  "family": "failure",
+  "difficulty": "hard",
+  "tier": "challenge",
+  "purpose": "Wrong-wearer products remain challenges while an unavailable selected remembered item fails closed without reviving an older slot winner.",
+  "coverage": [
+    "failure:optional_missing_state",
+    "failure:unsafe_winner_no_resurrection",
+    "failure:wrong_scale",
+    "failure:wrong_wearer"
+  ],
+  "state_checks": [
+    {
+      "kind": "missing_selected_candidate",
+      "missing_category": "bottom",
+      "expected_behavior": "omit_without_resurrection"
+    }
+  ],
+  "live_checks": [
+    {
+      "file": "current-dog-sweater.png",
+      "kind": "product_category",
+      "tier": "challenge",
+      "expected_category": null,
+      "expected_human_bucket": "zero"
+    },
+    {
+      "file": "current-doll-outfit.png",
+      "kind": "product_category",
+      "tier": "challenge",
+      "expected_category": null,
+      "expected_human_bucket": "zero"
+    }
+  ],
+  "files": [
+    {
+      "path": "failure/hard-wrong-wearer-and-missing-state/current-dog-sweater.png",
+      "sha256": "5c2d4bd3022db55b62ea0d6150bef5ac3c9396e8f8336758fc192788d4d84f4e",
+      "bytes": 2037745,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "failure/hard-wrong-wearer-and-missing-state/current-doll-outfit.png",
+      "sha256": "ebb0078ffaeaff90d44a16642d5e408d788666aa08ddc566437f7f2ba906fdf4",
+      "bytes": 1954730,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "failure/hard-wrong-wearer-and-missing-state/current-top.png",
+      "sha256": "a8047b572f1f46fc68547cae04fa48e6bc6249118d544f85f5260c3a64e5b422",
+      "bytes": 2049300,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "failure/hard-wrong-wearer-and-missing-state/person-front.png",
+      "sha256": "f0957883f049840ade86651837b6978c6836495adad21ddc28ab31de8c824e0e",
+      "bytes": 1692186,
+      "width": 862,
+      "height": 1825,
+      "mode": "RGB",
+      "format": "PNG"
+    }
+  ]
+}

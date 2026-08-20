@@ -1,0 +1,57 @@
+{
+  "id": "failure_medium_textile_objects",
+  "folder": "failure/medium-textile-objects",
+  "family": "failure",
+  "difficulty": "medium",
+  "tier": "mixed",
+  "purpose": "Printed home textiles must remain outside VTO even when fabric and graphic cues resemble garments.",
+  "coverage": [
+    "failure:textile_object",
+    "presentation:dense_pseudo_text"
+  ],
+  "live_checks": [
+    {
+      "file": "current-lampshade.png",
+      "kind": "product_category",
+      "tier": "gating",
+      "expected_category": null,
+      "expected_human_bucket": "zero"
+    },
+    {
+      "file": "current-blanket.png",
+      "kind": "product_category",
+      "tier": "challenge",
+      "expected_category": null,
+      "expected_human_bucket": "zero"
+    }
+  ],
+  "files": [
+    {
+      "path": "failure/medium-textile-objects/current-blanket.png",
+      "sha256": "5460c5e3477275923532b85f67aade2308e726db3bbc4e904e5057b9afc9e45d",
+      "bytes": 2871389,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "failure/medium-textile-objects/current-lampshade.png",
+      "sha256": "940f775a11279a3420cd8eab76d133021172e72fa06474b9b039b57d17ad08ba",
+      "bytes": 2588934,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "failure/medium-textile-objects/person-front.png",
+      "sha256": "f0957883f049840ade86651837b6978c6836495adad21ddc28ab31de8c824e0e",
+      "bytes": 1692186,
+      "width": 862,
+      "height": 1825,
+      "mode": "RGB",
+      "format": "PNG"
+    }
+  ]
+}

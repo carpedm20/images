@@ -1,0 +1,76 @@
+{
+  "id": "upper_body_medium_latest_wins",
+  "folder": "upper-body/medium-latest-wins",
+  "family": "upper_body",
+  "difficulty": "medium",
+  "tier": "gating",
+  "purpose": "Without layering, the current upper-body category replaces the competing remembered layer in either direction.",
+  "coverage": [
+    "state:latest_upper_wins"
+  ],
+  "mix_match_steps": [
+    {
+      "id": "current_outerwear_wins",
+      "current": {
+        "file": "current-outerwear.png",
+        "category": "outerwear"
+      },
+      "candidates": [
+        {
+          "file": "remembered-top.png",
+          "category": "top",
+          "minute": 1
+        }
+      ],
+      "expected_files": [
+        "current-outerwear.png"
+      ]
+    },
+    {
+      "id": "current_top_wins",
+      "current": {
+        "file": "remembered-top.png",
+        "category": "top"
+      },
+      "candidates": [
+        {
+          "file": "current-outerwear.png",
+          "category": "outerwear",
+          "minute": 2
+        }
+      ],
+      "expected_files": [
+        "remembered-top.png"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "upper-body/medium-latest-wins/current-outerwear.png",
+      "sha256": "af8b3c7452c9984079fce91adf582e6c9651ac7230ad150f09107bc1fe16a790",
+      "bytes": 1968188,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "upper-body/medium-latest-wins/person-front.png",
+      "sha256": "f0957883f049840ade86651837b6978c6836495adad21ddc28ab31de8c824e0e",
+      "bytes": 1692186,
+      "width": 862,
+      "height": 1825,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "upper-body/medium-latest-wins/remembered-top.png",
+      "sha256": "a8047b572f1f46fc68547cae04fa48e6bc6249118d544f85f5260c3a64e5b422",
+      "bytes": 2049300,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    }
+  ]
+}

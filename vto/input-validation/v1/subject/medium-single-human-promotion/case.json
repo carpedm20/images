@@ -1,0 +1,52 @@
+{
+  "id": "subject_medium_single_human_promotion",
+  "folder": "subject/medium-single-human-promotion",
+  "family": "subject",
+  "difficulty": "medium",
+  "tier": "gating",
+  "purpose": "A categoryless current image with one clear person is promoted to the exclusive outfit-image path.",
+  "coverage": [
+    "human:face_clear",
+    "human:one",
+    "input:outfit_image",
+    "preparation:sam3",
+    "presentation:modeled",
+    "subject:front"
+  ],
+  "subject_checks": [
+    {
+      "file": "current-single-person-outfit.png",
+      "expected_people": "one",
+      "expected_decision": "promote_outfit"
+    }
+  ],
+  "live_checks": [
+    {
+      "file": "current-single-person-outfit.png",
+      "kind": "human_detection",
+      "tier": "gating",
+      "expected_raw_person_bucket": "one",
+      "expected_usable_human_bucket": "one"
+    }
+  ],
+  "files": [
+    {
+      "path": "subject/medium-single-human-promotion/current-single-person-outfit.png",
+      "sha256": "d3b498cd91c20b84dc3580744f637ed52fba34ccfcd1eabef3ac082f972d2d00",
+      "bytes": 1652049,
+      "width": 864,
+      "height": 1821,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "subject/medium-single-human-promotion/person-front.png",
+      "sha256": "f0957883f049840ade86651837b6978c6836495adad21ddc28ab31de8c824e0e",
+      "bytes": 1692186,
+      "width": 862,
+      "height": 1825,
+      "mode": "RGB",
+      "format": "PNG"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "body_mode_easy_one_piece",
+  "folder": "body-mode/easy-one-piece",
+  "family": "body_mode",
+  "difficulty": "easy",
+  "tier": "gating",
+  "purpose": "A complex but complete dress selects the one-piece body mode.",
+  "coverage": [
+    "category:one_piece",
+    "presentation:complex_silhouette",
+    "state:one_piece_mode"
+  ],
+  "mix_match_steps": [
+    {
+      "id": "one_piece_only",
+      "current": {
+        "file": "current-one-piece.png",
+        "category": "one_piece"
+      },
+      "candidates": [],
+      "expected_files": [
+        "current-one-piece.png"
+      ]
+    }
+  ],
+  "live_checks": [
+    {
+      "file": "current-one-piece.png",
+      "kind": "product_category",
+      "tier": "gating",
+      "expected_category": "one_piece",
+      "expected_human_bucket": "zero"
+    }
+  ],
+  "files": [
+    {
+      "path": "body-mode/easy-one-piece/current-one-piece.png",
+      "sha256": "f26697a8c9fb1c8cea5432cadcefccdb4efdabeadf799bb67b3a5c54f5a62013",
+      "bytes": 2662167,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "body-mode/easy-one-piece/person-front.png",
+      "sha256": "f0957883f049840ade86651837b6978c6836495adad21ddc28ab31de8c824e0e",
+      "bytes": 1692186,
+      "width": 862,
+      "height": 1825,
+      "mode": "RGB",
+      "format": "PNG"
+    }
+  ]
+}

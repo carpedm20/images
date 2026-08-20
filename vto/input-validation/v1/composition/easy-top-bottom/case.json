@@ -1,0 +1,61 @@
+{
+  "id": "composition_easy_top_bottom",
+  "folder": "composition/easy-top-bottom",
+  "family": "composition",
+  "difficulty": "easy",
+  "tier": "gating",
+  "purpose": "The basic separates flow keeps one remembered top and the current bottom in canonical order.",
+  "coverage": [
+    "state:separates",
+    "subject:front"
+  ],
+  "mix_match_steps": [
+    {
+      "id": "add_bottom",
+      "current": {
+        "file": "current-bottom.png",
+        "category": "bottom"
+      },
+      "candidates": [
+        {
+          "file": "remembered-top.png",
+          "category": "top",
+          "minute": 1
+        }
+      ],
+      "expected_files": [
+        "remembered-top.png",
+        "current-bottom.png"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "composition/easy-top-bottom/current-bottom.png",
+      "sha256": "0500022bb341d6f556cad166a515c1efb2105946515dbe8d666aa2e2c5e6fc6a",
+      "bytes": 1426658,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "composition/easy-top-bottom/person-front.png",
+      "sha256": "f0957883f049840ade86651837b6978c6836495adad21ddc28ab31de8c824e0e",
+      "bytes": 1692186,
+      "width": 862,
+      "height": 1825,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "composition/easy-top-bottom/remembered-top.png",
+      "sha256": "a8047b572f1f46fc68547cae04fa48e6bc6249118d544f85f5260c3a64e5b422",
+      "bytes": 2049300,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "upper_body_easy_outerwear",
+  "folder": "upper-body/easy-outerwear",
+  "family": "upper_body",
+  "difficulty": "easy",
+  "tier": "gating",
+  "purpose": "Technical outerwear remains a valid single upper-body slot.",
+  "coverage": [
+    "category:outerwear",
+    "presentation:technical_construction",
+    "state:single_slot"
+  ],
+  "mix_match_steps": [
+    {
+      "id": "outerwear_only",
+      "current": {
+        "file": "current-outerwear.png",
+        "category": "outerwear"
+      },
+      "candidates": [],
+      "expected_files": [
+        "current-outerwear.png"
+      ]
+    }
+  ],
+  "live_checks": [
+    {
+      "file": "current-outerwear.png",
+      "kind": "product_category",
+      "tier": "gating",
+      "expected_category": "outerwear",
+      "expected_human_bucket": "zero"
+    }
+  ],
+  "files": [
+    {
+      "path": "upper-body/easy-outerwear/current-outerwear.png",
+      "sha256": "af8b3c7452c9984079fce91adf582e6c9651ac7230ad150f09107bc1fe16a790",
+      "bytes": 1968188,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "upper-body/easy-outerwear/person-front.png",
+      "sha256": "f0957883f049840ade86651837b6978c6836495adad21ddc28ab31de8c824e0e",
+      "bytes": 1692186,
+      "width": 862,
+      "height": 1825,
+      "mode": "RGB",
+      "format": "PNG"
+    }
+  ]
+}

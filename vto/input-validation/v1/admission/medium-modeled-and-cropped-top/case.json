@@ -1,0 +1,52 @@
+{
+  "id": "admission_medium_modeled_and_cropped_top",
+  "folder": "admission/medium-modeled-and-cropped-top",
+  "family": "admission",
+  "difficulty": "medium",
+  "tier": "gating",
+  "purpose": "Modeled and close-cropped dense-print tops must not be rejected or delayed by print complexity.",
+  "coverage": [
+    "category:top",
+    "human:one",
+    "input:product",
+    "presentation:close_crop",
+    "presentation:dense_pseudo_text",
+    "presentation:modeled"
+  ],
+  "live_checks": [
+    {
+      "file": "current-top-modeled.png",
+      "kind": "product_category",
+      "tier": "gating",
+      "expected_category": "top",
+      "expected_human_bucket": "one_or_more"
+    },
+    {
+      "file": "current-top-cropped.png",
+      "kind": "product_category",
+      "tier": "gating",
+      "expected_category": "top",
+      "expected_human_bucket": "zero"
+    }
+  ],
+  "files": [
+    {
+      "path": "admission/medium-modeled-and-cropped-top/current-top-cropped.png",
+      "sha256": "27df0d19a556100f54c69d8655e0ca2f85a890fec4359fad498bbaa38761b20d",
+      "bytes": 2554140,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "admission/medium-modeled-and-cropped-top/current-top-modeled.png",
+      "sha256": "87b888cabb9fb9fa2df65e5f509a79b0bdd50ecdc6ada3a3052ae4b219ea38ba",
+      "bytes": 1946460,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    }
+  ]
+}

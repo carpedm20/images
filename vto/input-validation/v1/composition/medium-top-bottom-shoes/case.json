@@ -1,0 +1,79 @@
+{
+  "id": "composition_medium_top_bottom_shoes",
+  "folder": "composition/medium-top-bottom-shoes",
+  "family": "composition",
+  "difficulty": "medium",
+  "tier": "gating",
+  "purpose": "Footwear is retained after two separate body slots and stays in canonical accessory order.",
+  "coverage": [
+    "category:shoes",
+    "state:separates"
+  ],
+  "mix_match_steps": [
+    {
+      "id": "add_shoes",
+      "current": {
+        "file": "current-shoes.png",
+        "category": "shoes"
+      },
+      "candidates": [
+        {
+          "file": "remembered-top.png",
+          "category": "top",
+          "minute": 1
+        },
+        {
+          "file": "remembered-bottom.png",
+          "category": "bottom",
+          "minute": 2
+        }
+      ],
+      "expected_files": [
+        "remembered-top.png",
+        "remembered-bottom.png",
+        "current-shoes.png"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "composition/medium-top-bottom-shoes/current-shoes.png",
+      "sha256": "a4424ff7f32753123e9c2e2ec3b119b9a71ea2e8b66bc126238dceb83473716e",
+      "bytes": 1305731,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "format": "PNG",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "has_transparency": true
+    },
+    {
+      "path": "composition/medium-top-bottom-shoes/person-front.png",
+      "sha256": "f0957883f049840ade86651837b6978c6836495adad21ddc28ab31de8c824e0e",
+      "bytes": 1692186,
+      "width": 862,
+      "height": 1825,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "composition/medium-top-bottom-shoes/remembered-bottom.png",
+      "sha256": "0500022bb341d6f556cad166a515c1efb2105946515dbe8d666aa2e2c5e6fc6a",
+      "bytes": 1426658,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "composition/medium-top-bottom-shoes/remembered-top.png",
+      "sha256": "a8047b572f1f46fc68547cae04fa48e6bc6249118d544f85f5260c3a64e5b422",
+      "bytes": 2049300,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    }
+  ]
+}
