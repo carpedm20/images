@@ -177,6 +177,27 @@ reference.
 > props, logos, readable text, watermark, or brand marks. The intentionally tiny
 > single person is the only subject.
 
+## VTO avatar-proportion regression
+
+### Full-body modeled coat donor
+
+> Create a synthetic ecommerce modeled-garment photograph specifically for
+> virtual try-on testing. Use a seamless pure white studio background. Show
+> exactly one fictional adult male fashion model, full body from top of head
+> through both shoes, standing straight and front-facing with feet visible and
+> arms relaxed. He wears a long black leather-like overcoat with a very large
+> cream-and-charcoal floral statement collar, loose cobalt-blue wide-leg
+> trousers, and plain black boots. The long modeled outfit and visible human
+> head and feet are essential because this fixture tests accidental donor-body
+> proportion transfer. Use realistic high-end ecommerce catalog photography
+> while keeping the person unmistakably fictional. Compose at portrait 2:3,
+> centered, nearly full canvas height with small even top and bottom margins,
+> no crop, tilt, or dynamic pose. Use neutral soft studio lighting and clear
+> garment edges. One person only; front view; both shoulders, ankles, and feet
+> clearly visible; face unobstructed. No bag, eyewear, hat, props, logos, text,
+> watermark, or background objects. The image must be original and must not
+> reproduce any real person, brand, or existing product photograph.
+
 ## Deterministic media variants
 
 Two byte-level decoder fixtures are derived from the generated originals by

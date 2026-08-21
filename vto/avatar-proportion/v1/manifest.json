@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "suite": "vto_avatar_proportion",
+  "version": "v1",
+  "cases": [
+    {
+      "id": "grok_full_body_modeled_coat",
+      "folder": "grok/full-body-modeled-coat",
+      "purpose": "Grok must change the synthetic avatar's clothing without adopting the tall full-body garment model's head/body proportions.",
+      "provider": "grok",
+      "input_kind": "outfit_image",
+      "view": "front",
+      "expected_reference_preparation_profile": "grok_full_donor_pose_fit_v1",
+      "expected_output_size": [
+        768,
+        1376
+      ],
+      "max_relative_person_face_ratio_drift": 0.1,
+      "max_relative_shoulder_ankle_face_ratio_drift": 0.1,
+      "files": [
+        {
+          "role": "avatar",
+          "path": "grok/full-body-modeled-coat/avatar-front.png",
+          "sha256": "f0957883f049840ade86651837b6978c6836495adad21ddc28ab31de8c824e0e",
+          "bytes": 1692186,
+          "width": 862,
+          "height": 1825,
+          "mode": "RGB",
+          "format": "PNG"
+        },
+        {
+          "role": "garment",
+          "path": "grok/full-body-modeled-coat/modeled-coat.png",
+          "sha256": "b0157ec860f98ffdfd966136531f21912488fe0fc0152724013f5a4cb2cb648c",
+          "bytes": 1324233,
+          "width": 1024,
+          "height": 1536,
+          "mode": "RGB",
+          "format": "PNG"
+        }
+      ]
+    }
+  ]
+}

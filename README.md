@@ -50,6 +50,15 @@ https://raw.githubusercontent.com/carpedm20/images/<commit>/vto/input-validation
 Do not use a branch URL in a regression manifest. The consuming repository
 must also verify each downloaded file's SHA-256 digest.
 
+## VTO avatar-proportion regression
+
+`vto/avatar-proportion/v1/` contains a synthetic avatar and a synthetic
+full-body modeled coat image for testing whether VTO providers preserve the
+avatar's head/body proportions. The garment fixture deliberately carries a
+strong, tall donor-body signal while remaining original CC0 test imagery. Its
+manifest locks the asset and expected output-geometry contract; real provider
+execution remains opt-in in the consuming repository.
+
 ## License
 
 The fixtures are released under [CC0 1.0 Universal](LICENSE).
